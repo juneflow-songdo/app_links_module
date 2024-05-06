@@ -1,7 +1,7 @@
 name: app_links_module
-description: "Description here"
+description: "App Links Module for Dynamic Links and Universal Links."
 #publish_to: 'none'
-#repository: https://github.com/melodysdreamj/juneflow
+repository: https://github.com/juneflow-songdo/app_links_module
 
 version: 1.0.0
 
