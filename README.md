@@ -33,6 +33,8 @@ keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -sto
 - if you want get **debug fingerprint on windows**, enter the following command in terminal.
   - if your computer not installed java, please install it first. 
     - go to [install page](https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html), download and install [Windows x64 Installer.]
+    - go to settings > system > about > advanced system settings > environment variables > system variables > path > edit > new > paste the path.
+      - ex) C:\Program Files\Java\jdk-16\bin
     - create new android project and run once to generate the debug.keystore file.
 ```bash
 keytool -list -v -keystore "C:\Users\[UserName]\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
