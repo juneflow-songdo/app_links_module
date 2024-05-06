@@ -21,6 +21,8 @@ Connect to Git > select the repository you just created. > Begin setup > Save an
 4. open cloned project, go to index.html file, replace the content with the following code.
 - [your_scheme] -> your app scheme name. ex) myapp
 - [your.app.package] -> your app package name. ex) com.example.myapp
+
+### android part setting
 5. get sha-256 fingerprint from your app 
 - if you want get **debug fingerprint on mac**, enter the following command in terminal.
   - if your computer not installed java, please install it first. 
@@ -41,7 +43,14 @@ flutter build appbundle
 ```
 6. replace [11:22:33:44:55:66...] in [.well-known/assetlinks.json] file with the sha-256 fingerprint you just got.
 7. replace [your.package.name] in [.well-known/assetlinks.json] file with your app package name. ex) com.example.myapp
-8. commit and push to github for update cloudflare pages.
+
+### ios part setting
+8. replace [apple team id] in [.well-known/apple-app-site-association] file with your apple team id.
+   - you can find your apple team id membership section in [apple developer account](https://developer.apple.com/account/).
+9. replace [[app bundle id]] in [.well-known/apple-app-site-association] file with your app package name. ex) com.example.myapp
+
+
+10. commit and push to github for update cloudflare pages.
 
 
 ## Android Configuration
@@ -71,6 +80,10 @@ flutter build appbundle
     <!-- <data android:scheme="sample" /> -->
 </intent-filter>
 ```
+
+## iOS Configuration
+1. open xcode in /ios/Runner.xcworkspace, go to Runner > Info > URL Types > add new URL Type. > add URL Schemes with your app scheme name. ex) sample
+2. go to Signing & Capabilities > + Capability > Associated Domains > add new Associated Domain. > add your web site url with applinks prefix. ex) applinks:your.web.site
 
 
 ## Usage
