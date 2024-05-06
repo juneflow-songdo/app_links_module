@@ -84,7 +84,15 @@ flutter build appbundle
 ## iOS Configuration
 1. open xcode in /ios/Runner.xcworkspace, go to Runner > Info > URL Types > add new URL Type. > add URL Schemes with your app scheme name. ex) sample
 2. go to Signing & Capabilities > + Capability > Associated Domains > add new Associated Domain. > add your web site url with applinks prefix. ex) applinks:your.web.site
+   * Warning
+     * when write applinks prefix, do not add https:// prefix. ex) applinks:your.web.site
+     * do not add / at the end of the url. ex) applinks:your.web.site
 
+## MacOS Configuration
+1. open xcode in /macos/Runner.xcworkspace, go to Runner > Info > URL Types > add new URL Type. > add URL Schemes with your app scheme name. ex) sample
+2. go to Signing & Capabilities > + Capability > Associated Domains > add new Associated Domain. > add your web site url with applinks prefix. ex) applinks:your.web.site
+   * Warning: when write applinks prefix, do not add https:// prefix. ex) applinks:your.web.sit
+   * do not add / at the end of the url. ex) applinks:your.web.site
 
 ## Usage
 ```dart
