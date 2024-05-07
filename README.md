@@ -21,6 +21,8 @@ Connect to Git > select the repository you just created. > Begin setup > Save an
 4. open cloned project, go to index.html file, replace the content with the following code.
 - [your_scheme] -> your app scheme name. ex) myapp
 - [your.app.package] -> your app package name. ex) com.example.myapp
+
+### android part setting
 5. get sha-256 fingerprint from your app 
 - if you want get **debug fingerprint on mac**, enter the following command in terminal.
   - if your computer not installed java, please install it first. 
@@ -31,6 +33,8 @@ keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -sto
 - if you want get **debug fingerprint on windows**, enter the following command in terminal.
   - if your computer not installed java, please install it first. 
     - go to [install page](https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html), download and install [Windows x64 Installer.]
+    - go to settings > system > about > advanced system settings > environment variables > system variables > path > edit > new > paste the path.
+      - ex) C:\Program Files\Java\jdk-16\bin
     - create new android project and run once to generate the debug.keystore file.
 ```bash
 keytool -list -v -keystore "C:\Users\[UserName]\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
@@ -41,7 +45,14 @@ flutter build appbundle
 ```
 6. replace [11:22:33:44:55:66...] in [.well-known/assetlinks.json] file with the sha-256 fingerprint you just got.
 7. replace [your.package.name] in [.well-known/assetlinks.json] file with your app package name. ex) com.example.myapp
-8. commit and push to github for update cloudflare pages.
+
+### ios part setting
+8. replace [apple team id] in [.well-known/apple-app-site-association] file with your apple team id.
+   - you can find your apple team id membership section in [apple developer account](https://developer.apple.com/account/).
+9. replace [[app bundle id]] in [.well-known/apple-app-site-association] file with your app package name. ex) com.example.myapp
+
+
+10. commit and push to github for update cloudflare pages.
 
 
 ## Android Configuration
@@ -72,6 +83,18 @@ flutter build appbundle
 </intent-filter>
 ```
 
+## iOS Configuration
+1. open xcode in /ios/Runner.xcworkspace, go to Runner > Info > URL Types > add new URL Type. > add URL Schemes with your app scheme name. ex) sample
+2. go to Signing & Capabilities > + Capability > Associated Domains > add new Associated Domain. > add your web site url with applinks prefix. ex) applinks:your.web.site
+   * Warning
+     * when write applinks prefix, do not add https:// prefix. ex) applinks:your.web.site
+     * do not add / at the end of the url. ex) applinks:your.web.site
+
+## MacOS Configuration
+1. open xcode in /macos/Runner.xcworkspace, go to Runner > Info > URL Types > add new URL Type. > add URL Schemes with your app scheme name. ex) sample
+2. go to Signing & Capabilities > + Capability > Associated Domains > add new Associated Domain. > add your web site url with applinks prefix. ex) applinks:your.web.site
+   * Warning: when write applinks prefix, do not add https:// prefix. ex) applinks:your.web.sit
+   * do not add / at the end of the url. ex) applinks:your.web.site
 
 ## Usage
 ```dart

@@ -6,7 +6,5 @@
 	<array>
 		<string>applinks:app-links-module-sample-website.pages.dev</string>
 	</array>
-	<key>com.apple.security.app-sandbox</key>
-	<true/>
 </dict>
 </plist>
