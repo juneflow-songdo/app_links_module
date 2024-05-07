@@ -3,7 +3,7 @@ description: "App Links Module for Dynamic Links and Universal Links."
 #publish_to: 'none'
 repository: https://github.com/juneflow-songdo/app_links_module
 
-version: 1.0.0
+version: 1.0.1
 
 environment:
   sdk: '>=3.3.1 <4.0.0'

@@ -15,7 +15,7 @@ Future<void> readyForAppLinksModule() async {
 }
 
 /*
-EasyEventBus.on('receive_app_links_uri', (uri) {
-  print(uri); // write your code here.
+EasyEventBus.on('receive_app_links_uri', (url) {
+  print(url); // write your code here.
 });
  */
