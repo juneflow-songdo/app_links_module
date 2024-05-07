@@ -10,6 +10,7 @@ environment:
 
 dependencies:
   app_links: #@add
+  easy_event_bus: #@add
   flutter:
     sdk: flutter
   go_router:

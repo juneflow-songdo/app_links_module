@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/View-Hub-007bff?style=for-the-badge&logo=flutter)](https://view.juneflow.org/)
 
 # app_links_module
-description here
+Dynamically handle incoming links in your app.
 
 ## App Configuration
 1. If the juneflow project doesn't exist, please create it by following [this guide](https://doc.juneflow.org/).
